@@ -43,8 +43,20 @@
             <input type="submit" value="Add New Task" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;
             <input type="reset" value="Clear" class="btn btn-success">
         </form>
+        <br>
+        <form method="GET" action="/searchdetails">
+            {{ csrf_field() }}
+            <div>
+                <input type="search" name="search" placeholder="Search by your subject name" class="search inpt"
+                    style="width: 500px;">
+                <button type='submit' class="button xy btn btn-success" id="addbtn"> Search </button>
+            </div>
+
+
+        </form>
+
         <br> <br>
-        <table class="table">
+        <table class="table" border="1px solid black">
             <thead class="thead-dark">
                 <tr>
                     {{-- <th scope="col">ID</th> --}}

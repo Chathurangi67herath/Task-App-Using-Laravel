@@ -28,3 +28,12 @@ route::get('/updatetask/{id}',[HomeController::class,'updatetaskmethod']);
 
 route::post('/updatetasks',[HomeController::class,'update']);
 
+
+//==========================================================
+//             search bar
+//==========================================================
+
+Route::get('/searchdetails',[HomeController::class,'searchdetails']);
+
+
+

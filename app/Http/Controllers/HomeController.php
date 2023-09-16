@@ -66,5 +66,11 @@ class HomeController extends Controller
         //return view('task')->with('tasks',$data);
     }
 
+    public function searchdetails(){
+        $search = $_GET['search'];
+        $tasks= Task::where('subject', 'Like', '%' . $search . '%')->get();
+        return view('task',compact('tasks'));
+}
+
 
 }
