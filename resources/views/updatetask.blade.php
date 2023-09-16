@@ -10,6 +10,10 @@
 
     <title>Task App</title>
     <style>
+        body {
+            background-color: rgb(140, 140, 149);
+        }
+
         .second {
             text-align: center;
         }
@@ -29,10 +33,16 @@
         <form method="POST" action="/updatetasks">
             {{ csrf_field() }}
             <br><br>
+            Subject Name :
+            <input type="text" name="subject" style="width: 500px;" value="{{ $taskdata->subject }}">
+            <br>
+            <br>
+            Your Task : &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             <input type="text" name="task" style="width: 500px;" value="{{ $taskdata->task }}">
+
             <input type="hidden" name="id" value="{{ $taskdata->id }}">
             <br> <br>
-            <input type="submit" value="Submit" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;
+            <input type="submit" value="Update" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;
             <input type="reset" value="Clear" class="btn btn-success">
         </form>
 </body>

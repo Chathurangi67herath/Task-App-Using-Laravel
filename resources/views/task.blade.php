@@ -15,7 +15,7 @@
         }
 
         body {
-            background-color: rgb(140, 140, 149);
+            background-color: rgb(182, 182, 183);
         }
     </style>
 </head>
@@ -33,16 +33,22 @@
         <form method="POST" action="/savetask">
             {{ csrf_field() }}
             <br><br>
+            Subject Name :
+            <input type="text" name="subject" style="width: 500px;">
+            <br>
+            <br>
+            Your Task : &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             <input type="text" name="task" style="width: 500px;">
             <br> <br>
-            <input type="submit" value="Submit" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;
+            <input type="submit" value="Add New Task" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;
             <input type="reset" value="Clear" class="btn btn-success">
         </form>
         <br> <br>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">ID</th>
+                    {{-- <th scope="col">ID</th> --}}
+                    <th scope="col">Subject</th>
                     <th scope="col">Task</th>
                     <th scope="col">IsCompleted</th>
                     <th scope="col">Action</th>
@@ -53,7 +59,8 @@
             <tbody class="thead-light">
                 @foreach ($tasks as $task)
                     <tr>
-                        <th scope="row">{{ $task->id }}</th>
+                        {{-- <th scope="row">{{ $task->id }}</th> --}}
+                        <td>{{ $task->subject }}</td>
                         <td>{{ $task->task }}</td>
                         <td>{{ $task->iscompleted }}</td>
                         <td>

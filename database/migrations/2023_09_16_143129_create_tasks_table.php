@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('subject');
             $table->string('task');
             $table->boolean('iscompleted')->default(0);
             $table->timestamps();

@@ -15,6 +15,7 @@ class HomeController extends Controller
     public function store(Request $request){
         $task=new Task;
         $this->validate($request,['task'=>'required|max:100|min:5',]);
+        $task->subject = $request->subject;
         $task->task = $request->task;
         $task->save();
         $data=Task::all();
@@ -54,8 +55,10 @@ class HomeController extends Controller
     public function update(Request $request){
         $this->validate($request,['task'=>'required|max:100|min:5',]);
         $id=$request->id;
+        $subject = $request->subject;
         $task = $request->task;
         $data = Task::find($id);
+        $data->task=$subject;
         $data->task=$task;
         $data->save();
         $data=Task::all();
