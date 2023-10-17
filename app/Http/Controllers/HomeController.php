@@ -58,7 +58,7 @@ class HomeController extends Controller
         $subject = $request->subject;
         $task = $request->task;
         $data = Task::find($id);
-        $data->task=$subject;
+        $data->subject=$subject;
         $data->task=$task;
         $data->save();
         $data=Task::all();

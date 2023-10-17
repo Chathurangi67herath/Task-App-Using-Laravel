@@ -1,0 +1,15 @@
+body .web-content #updateleft {
+  width: 100%;
+}
+
+body .web-content #updateleft .left-content {
+  width: 30%;
+}
+
+@media (max-width: 909px) {
+  body .web-content #updateleft .left-content {
+    width: 50%;
+    margin-top: 0px;
+  }
+}
+/*# sourceMappingURL=update.css.map */
