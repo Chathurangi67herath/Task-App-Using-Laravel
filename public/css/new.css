@@ -44,7 +44,6 @@ nav a {
 }
 
 a.active, a:hover {
-  border: 1px solid white;
   -webkit-transition: .1s;
   transition: .1s;
 }
